@@ -10,7 +10,7 @@
 numbers = [10, 20, 30, 40, 50, 60, 70]
 # Indexes:   0   1   2   3   4   5   6
 
-### ✅ Basic Slicing Examples
+### ✅ Basic Slicing Examples 
 
 print(numbers[1:5])     # Output: [20, 30, 40, 50]
 

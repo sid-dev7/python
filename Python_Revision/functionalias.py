@@ -1,5 +1,5 @@
 n1= 200
-n2 = 100
+n2 = 600
 def function1():
         print (f"inside function1")
         add = n1 + n2
