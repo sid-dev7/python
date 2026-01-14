@@ -72,14 +72,15 @@ print(numbers)  # Output: {1, 2, 4, 5, 6}
 
 def function_2():
     # iterate using list 
-    List_1=[10,20,30,40,50]
-# iterate using for 
+    List_1 = [10,20,30,40,50]
+    # iterate using for 
     for value in List_1:
         print(value)
+    # iterate by index
+    index_positions = list(range(len(List_1)))
+    for index in index_positions:
+        print(f"value at {index} = {List_1[index]}")
+
 print("-*-"*20)
 
-# iterate 
-index_positions = list(range(len(list_1  )))
-for index in index_positions:
-    print(f"value at {index} = {list(index)}")
 function_2()
