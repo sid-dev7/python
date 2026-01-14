@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siddharth Chobhe Portfolio</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f8;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(31,41,55,0.95);
+      color: white;
+      padding: 1rem 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    header nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    header nav a:hover {
+      color: #38bdf8;
+      transform: scale(1.1);
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      padding-top: 80px;
+      gap: 40px;
+    }
+
+    .hero-text {
+      flex: 1;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: fadeInContent 3s ease forwards;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      color: #1f2937;
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      font-size: 1.3rem;
+      color: #4b5563;
+    }
+
+    .hero-image {
+      flex: 1;
+      height: 100%;
+      opacity: 0;
+      animation: fadeInImage 4s forwards;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    @keyframes fadeInImage {
+      0% {opacity: 0; transform: scale(1.05);}
+      100% {opacity: 1; transform: scale(1);}
+    }
+
+    @keyframes fadeInContent {
+      0% {opacity: 0; transform: translateY(30px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Social Icons */
+    .social-icons {
+      margin: 20px 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-icons a {
+      font-size: 2rem;
+      transition: transform 0.3s;
+    }
+
+    .social-icons a.github { color: #333333; }
+    .social-icons a.x { color: #000000; }
+    .social-icons a.linkedin { color: #0A66C2; }
+    .social-icons a.medium { color: #00AB6C; }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    /* About Section next to hero */
+    .about-text {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      animation: fadeInContent 4.5s ease forwards;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #1f2937;
+      font-size: 2rem;
+    }
+
+    /* Skills */
+    .skills-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills-content li::before {
+      content: "\2022";
+      color: #38bdf8;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+    }
+
+    /* Experience */
+    .experience-item {
+      margin-bottom: 20px;
+    }
+
+    .experience-item h3 {
+      color: #2563eb;
+      margin-bottom: 5px;
+    }
+
+    /* Medium Articles Carousel */
+    .articles-carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
+
+    .article-card {
+      min-width: 250px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .article-card:hover {
+      transform: scale(1.05);
+    }
+
+    .article-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .article-card h3 {
+      font-size: 1rem;
+      padding: 10px;
+      color: #1f2937;
+    }
+
+    footer {
+      background: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    @media(max-width: 900px) {
+      .hero {
+        flex-direction: column;
+      }
+      .hero-text, .hero-image {
+        max-width: 100%;
+      }
+      .hero-image {
+        height: 50vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#articles">Articles</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <h1>Siddharth Chobhe</h1>
+      <p>Project Manager | Product Owner | AWS Enthusiast</p>
+      <div class="social-icons">
+        <a class="github" href="https://github.com/sid-dev7" target="_blank"><i class="fab fa-github"></i></a>
+        <a class="x" href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a class="linkedin" href="https://linkedin.com/in/siddharth-chobhe" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a class="medium" href="https://medium.com/@siddharthchobhe" target="_blank"><i class="fab fa-medium"></i></a>
+      </div>
+      <div class="about-text">
+        <p>Technically adept Project Manager with 3.5 years of experience delivering client onboarding, configuration, and process automation projects. Skilled in managing SOWs, financials, and resource forecasting while driving efficiency through scripting (Python, VBA) and tool integration (Jira, MPP, SharePoint). Proven ability to streamline documentation, lead cross-functional teams, and support product enhancement through client feedback and platform optimization.</p>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="profile.jpg" alt="Siddharth Chobhe">
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="skills-content">
+      <ul>
+        <li>Agile & Waterfall Project Management</li>
+        <li>SOW, Budget & Resource Management</li>
+        <li>Risk Mitigation & Stakeholder Communication</li>
+        <li>Python & VBA Automation</li>
+        <li>MS Project (MPP), Jira, Confluence, SharePoint</li>
+        <li>MS Office Suite: Excel, PowerPoint, Outlook, Teams</li>
+        <li>Figma for UI/UX Collaboration</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" data-aos="fade-up">
+    <h2>Experience</h2>
+    <div class="experience-content">
+      <div class="experience-item">
+        <h3>ZS Associates - Project Management Associate</h3>
+        <p>Nov 2023 – Current</p>
+        <p>Led end-to-end monthly financial billing for a diverse project portfolio, managed SOW lifecycle, automated reporting with Python and VBA, and streamlined documentation processes.</p>
+      </div>
+      <div class="experience-item">
+        <h3>HCL Technologies - Senior Executive Project Management</h3>
+        <p>Aug 2021 – Jun 2023</p>
+        <p>Managed cross-functional teams and client relationships, handled HP to Cisco configuration projects, resource forecasting, and financial milestone tracking.</p>
+      </div>
+      <div class="experience-item">
+        <h3>Hundred Plus - Marketing Intern</h3>
+        <p>May 2020 – Jul 2020</p>
+        <p>Supported video production, handled 50+ customer accounts, and created content for email and social media campaigns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Section -->
+  <section id="articles" data-aos="fade-up">
+    <h2>Medium Articles</h2>
+    <div class="articles-carousel">
+      <div class="article-card" onclick="window.open('https://medium.com/@siddharthchobhe/kubernetes-for-technical-project-managers-a-complete-beginner-to-intermediate-guide-38b559f78338','_blank')">
+        <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/0*WFcLNoAUD1oZ0fvi.png" alt="Kubernetes Guide">
+        <h3>Kubernetes for Technical Project Managers</h3>
+      </div>
+      <div class="article-card" onclick="window.open('https://medium.com/@siddharthchobhe/ci-cd-pipelines-explained-jenkins-github-actions-and-gitlab-ci-beginner-friendly-guide-5a66f0526d48','_blank')">
+        <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*cOwNBXBWZXMR_iBZekyQ-Q.png" alt="CI/CD Pipelines">
+        <h3>CI/CD Pipelines Explained</h3>
+      </div>
+      <div class="article-card" onclick="window.open('https://medium.com/@siddharthchobhe/mastering-product-ownership-scrum-agile-building-a-real-time-food-delivery-app-1508d3fdf2e4','_blank')">
+        <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*f789yVyHHUis6LXFNjcaTQ.png" alt="Product Ownership Scrum Agile">
+        <h3>Mastering Product Ownership Scrum & Agile</h3>
+      </div>
+      <div class="article-card" onclick="window.open('https://medium.com/@siddharthchobhe/a-deep-dive-into-aws-ec2-overview-part-1-de8084ec317d','_blank')">
+        <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*noU5CbOyoLsuXhfr.png" alt="AWS EC2 Deep Dive">
+        <h3>A Deep Dive into AWS EC2 Overview</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>Email: siddharthchobhe@gmail.com</p>
+    <p>Location: Pune, India</p>
+    <p>Phone: +91 9922948113</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Siddharth Chobhe. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>
